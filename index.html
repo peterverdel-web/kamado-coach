@@ -1,190 +1,120 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kamado Coach V3.2 Plus</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamado Coach V3.4</title>
+
 <style>
-body{font-family:-apple-system,Arial,sans-serif;margin:0;background:#f7f3eb;color:#222}
-.app{max-width:440px;margin:auto}
-header{background:#2f6b3b;color:#fff;padding:16px}
-h1{margin:0;font-size:22px}
-nav{position:sticky;top:0;background:#fff;padding:10px;border-bottom:1px solid #ddd;z-index:5}
-nav a{display:inline-block;margin:4px;padding:8px;border:1px solid #ccc;border-radius:20px;text-decoration:none;color:#222;font-size:14px}
-section{padding:14px}
-.card{background:#fff;border:1px solid #ddd;border-radius:12px;padding:12px;margin-bottom:12px}
-.pill{display:inline-block;background:#edf6ee;color:#2f6b3b;padding:4px 8px;border-radius:20px;font-size:12px;margin:2px}
-.step{padding:6px 0;border-bottom:1px dashed #ddd;font-size:14px}
-.step:last-child{border-bottom:none}
-.small{font-size:13px;color:#666}
-table{width:100%;border-collapse:collapse}
-td,th{padding:6px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}
-.notice{background:#eef6ef;border:1px solid #cfe6d2;color:#234c2c;padding:10px 12px;border-radius:12px;margin-bottom:12px}
+body{font-family:-apple-system,Arial,sans-serif;margin:0;background:#111;color:#fff}
+header{padding:16px;text-align:center;background:#1b1b1b;font-size:24px;font-weight:bold}
+.sub{font-size:14px;color:#ccc;margin-top:6px}
+.menu{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:12px;position:sticky;top:0;background:#111;border-bottom:1px solid #333}
+.menu a{padding:10px 14px;border-radius:10px;background:#ff9800;color:#000;font-weight:bold;text-decoration:none}
+.wrap{padding:15px;max-width:760px;margin:0 auto}
+.section{margin-bottom:20px}
+h2{color:#ffb74d}
+details{background:#1f1f1f;border-radius:10px;margin:10px 0}
+summary{cursor:pointer;padding:14px;font-weight:bold}
+.content{padding:10px}
+.step{margin-bottom:10px;font-size:14px}
+.toplink{color:#ffb74d;text-decoration:none}
 </style>
 </head>
+
 <body>
-<div class="app">
 
 <header>
-<h1>Kamado Coach V3.2 Plus</h1>
+🔥 Kamado Coach V3.4
+<div class="sub">Klik op een gerecht</div>
 </header>
 
-<nav>
-<a href="#planner">Planner</a>
-<a href="#combo">Combo</a>
-<a href="#masterrubs">Master rubs</a>
-<a href="#ribs">Ribs</a>
-<a href="#belly">Pork belly</a>
-<a href="#kip">Kip</a>
-<a href="#burgers">Burgers</a>
-<a href="#vis">Vis</a>
-<a href="#groenten">Groenten</a>
-<a href="#pizza">Pizza</a>
-<a href="#naslag">Naslag</a>
-</nav>
-
-<section>
-
-<div class="notice">
-<strong>Uitbreiding op jouw vorige versie</strong><br>
-De basis van V3.2 blijft staan. Hier zijn alleen drie dingen toegevoegd:
-1. combo koken, 2. betere planner, 3. extra rubs.
+<div class="menu">
+<a href="#varken">🍖 Varken</a>
+<a href="#kip">🍗 Kip</a>
+<a href="#rund">🥩 Rund</a>
+<a href="#vis">🐟 Vis</a>
+<a href="#groente">🥦 Groente</a>
 </div>
 
-<div class="card" id="planner">
-<strong>Planner (met marge)</strong>
-<div class="small">Gebaseerd op gemiddelde tijden + 30 min marge</div>
-<table>
-<tr><th>Gerecht</th><th>16:00</th><th>18:00</th><th>19:00</th></tr>
-<tr><td>Ribs</td><td>10:25</td><td>12:25</td><td>13:25</td></tr>
-<tr><td>Pork belly</td><td>10:45</td><td>12:45</td><td>13:45</td></tr>
-<tr><td>Kip</td><td>14:50</td><td>16:50</td><td>17:50</td></tr>
-<tr><td>Burgers</td><td>15:30</td><td>17:30</td><td>18:30</td></tr>
-<tr><td>Zalm</td><td>15:05</td><td>17:05</td><td>18:05</td></tr>
-</table>
+<div class="wrap">
+
+<div id="varken" class="section">
+<h2>Varken</h2>
+
+<details>
+<summary>Spareribs (130°C)</summary>
+<div class="content">
+<div class="step">Stap 1: 2,5 uur roken</div>
+<div class="step">Stap 2: 1,5 uur folie</div>
+<div class="step">Stap 3: 30 min saus</div>
+</div>
+</details>
+
+<details>
+<summary>Pork Belly</summary>
+<div class="content">
+<div class="step">2,5 uur roken</div>
+<div class="step">1,5 uur boter/honing</div>
+<div class="step">20 min glaze</div>
+</div>
+</details>
+
 </div>
 
-<div class="card" id="combo">
-<strong>Combo koken: ribs + pork belly</strong>
-<div class="step"><strong>Schema</strong><br><span class="small">0:00 ribs erop • 1:00 pork belly erbij • 2:30 ribs in folie • 3:30 pork belly in bakje • 4:00 ribs uit folie + saus • 4:00 pork belly glaze • 4:30 alles klaar</span></div>
-<div class="step"><strong>Rookhout</strong><br><span class="small">Alleen aan het begin toevoegen</span></div>
-<div class="step"><strong>Tip</strong><br><span class="small">Zo kun je twee gerechten tegelijk laten eindigen zonder steeds te rekenen.</span></div>
+<div id="kip" class="section">
+<h2>Kip</h2>
+
+<details>
+<summary>Hele kip</summary>
+<div class="content">
+<div class="step">180°C indirect</div>
+<div class="step">60–75 min</div>
+</div>
+</details>
+
 </div>
 
-<div class="card" id="masterrubs">
-<strong>3 vaste rubs / kruidenmixen</strong>
+<div id="rund" class="section">
+<h2>Rund</h2>
 
-<div class="step"><strong>Master Rub Varken</strong><br>
-<span class="small">2 el paprika • 1 el bruine suiker • 1 tl knoflookpoeder • 1 tl uienpoeder • ½ tl peper • ½ tl komijn • weinig zout</span>
+<details>
+<summary>Steak</summary>
+<div class="content">
+<div class="step">250°C direct</div>
+<div class="step">2–3 min per kant</div>
 </div>
+</details>
 
-<div class="step"><strong>Master Rub Kip</strong><br>
-<span class="small">1 el paprika • 1 tl knoflookpoeder • 1 tl uienpoeder • ½ tl peper • ½ tl tijm • beetje citroenrasp</span>
-</div>
-
-<div class="step"><strong>Master Rub Vis / licht</strong><br>
-<span class="small">Peper • citroenrasp • dille • klein beetje zeezout</span>
-</div>
 </div>
 
-<div class="card" id="ribs">
-<strong>Spareribs</strong><br>
-<span class="pill">130°C</span><span class="pill">Indirect</span><span class="pill">Appel / kers</span>
-<div class="step"><strong>Rub</strong><br><span class="small">2 el paprika • 1 el bruine suiker • 1 tl knoflookpoeder • 1 tl uienpoeder • ½ tl peper • ½ tl komijn • weinig zout</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">2,5 uur roken • 1,5 uur folie • 30 min saus</span></div>
-<div class="step"><strong>Draaien</strong><br><span class="small">Niet nodig</span></div>
+<div id="vis" class="section">
+<h2>Vis</h2>
+
+<details>
+<summary>Zalm</summary>
+<div class="content">
+<div class="step">180°C indirect</div>
+<div class="step">20 min</div>
+</div>
+</details>
+
 </div>
 
-<div class="card" id="belly">
-<strong>Pork belly</strong><br>
-<span class="pill">130°C</span><span class="pill">Indirect</span><span class="pill">Appel / kers</span>
-<div class="step"><strong>Rub</strong><br><span class="small">2 el paprika • 1 el bruine suiker • 1 tl knoflookpoeder • ½ tl peper • ½ tl komijn • liefst geen zout</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">2,5 uur roken • 1,5 uur boter + honing • 20 min glaze</span></div>
-<div class="step"><strong>Draaien</strong><br><span class="small">Niet nodig</span></div>
+<div id="groente" class="section">
+<h2>Groente</h2>
+
+<details>
+<summary>Aardappels</summary>
+<div class="content">
+<div class="step">180°C</div>
+<div class="step">30 min</div>
+</div>
+</details>
+
 </div>
 
-<div class="card" id="kip">
-<strong>Kip heel</strong><br>
-<span class="pill">180°C</span><span class="pill">Indirect</span><span class="pill">Appel</span>
-<div class="step"><strong>Rub</strong><br><span class="small">1 el paprika • 1 tl knoflookpoeder • 1 tl uienpoeder • ½ tl peper • ½ tl tijm • beetje citroenrasp</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">60 min garen • laatste 10 min krokant</span></div>
-<div class="step"><strong>Kerntemp</strong><br><span class="small">75°C</span></div>
 </div>
 
-<div class="card" id="burgers">
-<strong>Hamburgers</strong><br>
-<span class="pill">200°C</span><span class="pill">Direct</span>
-<div class="step"><strong>Kruiden / rub</strong><br><span class="small">1 tl peper • 1 tl knoflookpoeder • ½ tl paprikapoeder • heel weinig zout</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">3–4 min per kant • 3 min rust</span></div>
-<div class="step"><strong>Draaien</strong><br><span class="small">1 keer</span></div>
-</div>
-
-<div class="card" id="vis">
-<strong>Zalm</strong><br>
-<span class="pill">160°C</span><span class="pill">Indirect</span><span class="pill">Beuken / appel</span>
-<div class="step"><strong>Kruiden</strong><br><span class="small">Peper • citroenrasp • dille • klein beetje zeezout</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">15 min</span></div>
-<div class="step"><strong>Kerntemp</strong><br><span class="small">50–55°C</span></div>
-</div>
-
-<div class="card">
-<strong>Dorade</strong><br>
-<span class="pill">170°C</span><span class="pill">Indirect</span><span class="pill">Appel</span>
-<div class="step"><strong>Kruiden</strong><br><span class="small">Citroen • peper • beetje knoflook • olijfolie</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">20–25 min</span></div>
-</div>
-
-<div class="card">
-<strong>Garnalen</strong><br>
-<span class="pill">200°C</span><span class="pill">Direct</span>
-<div class="step"><strong>Kruiden</strong><br><span class="small">Knoflook • olijfolie • beetje chili • peper</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">6–8 min</span></div>
-</div>
-
-<div class="card" id="groenten">
-<strong>Groenten</strong><br>
-<span class="pill">180°C</span><span class="pill">Direct / indirect</span>
-<div class="step"><strong>Kruidenmix</strong><br><span class="small">Olijfolie • peper • zeezout • knoflook • rozemarijn of tijm</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">10–15 min</span></div>
-<div class="step"><strong>Voorbeelden</strong><br><span class="small">Courgette • paprika • champignons • aubergine</span></div>
-</div>
-
-<div class="card">
-<strong>Portobello</strong><br>
-<span class="pill">180°C</span><span class="pill">Indirect</span>
-<div class="step"><strong>Kruiden</strong><br><span class="small">Olijfolie • peper • knoflook • beetje zout</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">15–20 min</span></div>
-</div>
-
-<div class="card">
-<strong>Aardappel pakketjes</strong><br>
-<span class="pill">180°C</span><span class="pill">Indirect</span>
-<div class="step"><strong>Kruiden</strong><br><span class="small">Olie • peper • knoflook • rozemarijn</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">45 min in folie</span></div>
-</div>
-
-<div class="card" id="pizza">
-<strong>Pizza</strong><br>
-<span class="pill">300–350°C</span><span class="pill">Pizza steen</span>
-<div class="step"><strong>Kruiden</strong><br><span class="small">Oregano • basilicum • beetje knoflook op de saus</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">5–7 min bakken</span></div>
-</div>
-
-<div class="card">
-<strong>Knoflookbrood</strong><br>
-<span class="pill">200°C</span><span class="pill">Indirect</span>
-<div class="step"><strong>Kruiden</strong><br><span class="small">Boter • knoflook • peterselie</span></div>
-<div class="step"><strong>Tijdschema</strong><br><span class="small">10–15 min bakken</span></div>
-</div>
-
-<div class="card" id="naslag">
-<strong>Naslag</strong>
-<div class="step"><strong>Kerntemperaturen</strong><br><span class="small">Kip 75°C • ribs 90–95°C • pork belly 92–96°C • zalm 50–55°C • burgers door en door: 70°C+</span></div>
-<div class="step"><strong>Rookhout</strong><br><span class="small">Varken: appel/kers • Rund: eik/hickory • Kip: appel • Vis: beuken/appel • Groenten: weinig of geen</span></div>
-<div class="step"><strong>Basisregels</strong><br><span class="small">Low & slow 110–130°C • direct 180–220°C • rookhout alleen in beginfase • deksel zo weinig mogelijk openen</span></div>
-</div>
-
-</section>
-</div>
 </body>
 </html>
