@@ -3,333 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kamado Coach V3.6</title>
+<title>Kamado Coach V3.7</title>
+
 <style>
-body{font-family:-apple-system,Arial,sans-serif;margin:0;background:#111;color:#fff}
+body{font-family:-apple-system,Arial;margin:0;background:#111;color:#fff}
 header{padding:18px;text-align:center;background:#1b1b1b;font-size:24px;font-weight:bold}
 .sub{font-size:14px;color:#ccc;margin-top:6px}
-.menu{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:12px;position:sticky;top:0;background:#111;border-bottom:1px solid #333;z-index:5}
+
+.planner{background:#1f1f1f;padding:15px;margin:15px;border-radius:12px}
+.planner input, .planner select{padding:10px;margin:5px 0;width:100%;border-radius:8px;border:none}
+.planner button{padding:12px;background:#ff9800;border:none;border-radius:10px;font-weight:bold;width:100%}
+.result{margin-top:10px;color:#ffb74d;font-weight:bold}
+
+.menu{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:12px;background:#111}
 .menu a{padding:10px 14px;border-radius:10px;background:#ff9800;color:#000;font-weight:bold;text-decoration:none}
-.wrap{padding:15px;max-width:860px;margin:auto}
-.section{margin-bottom:26px}
-h2{color:#ffb74d;font-size:28px;margin:10px 0 14px}
-details{background:#1f1f1f;margin:12px 0;border-radius:14px;border:1px solid #2f2f2f;overflow:hidden}
-summary{padding:16px;font-weight:bold;cursor:pointer;font-size:18px;list-style:none}
-summary::-webkit-details-marker{display:none}
-.content{padding:0 16px 16px 16px;font-size:15px;line-height:1.5}
-.line{padding:8px 0;border-bottom:1px dashed #3a3a3a}
-.line:last-child{border-bottom:none}
-.label{color:#ffb74d;font-weight:bold}
-.tip{background:#2a2a2a;border-left:4px solid #ff9800;padding:10px 12px;margin-top:12px;border-radius:8px}
-.toplink{display:inline-block;margin-top:10px;color:#ffb74d;text-decoration:none;font-size:13px}
+
+.wrap{padding:15px;max-width:800px;margin:auto}
+h2{color:#ffb74d}
+
+details{background:#1f1f1f;margin:10px 0;border-radius:12px}
+summary{padding:14px;font-weight:bold;cursor:pointer}
+.content{padding:10px;font-size:14px}
+.line{padding:6px 0}
 </style>
+
 </head>
+
 <body>
 
-<header id="top">
-🔥 Kamado Coach V3.6
-<div class="sub">Uitgebreide coach-versie met echte inhoud per gerecht</div>
+<header>
+🔥 Kamado Coach V3.7
+<div class="sub">Met planner 🔥</div>
 </header>
 
+<div class="planner">
+<h3>⏱️ Planner</h3>
+
+<label>Hoe laat wil je eten?</label>
+<input type="time" id="eetTijd">
+
+<label>Kies gerecht</label>
+<select id="gerecht">
+<option value="480">Pulled Pork (8 uur)</option>
+<option value="360">Spareribs (6 uur)</option>
+<option value="75">Hele kip (1u15)</option>
+<option value="25">Kipdij (25 min)</option>
+<option value="20">Zalm (20 min)</option>
+<option value="15">Speklappen (15 min)</option>
+</select>
+
+<button onclick="bereken()">Bereken starttijd</button>
+
+<div class="result" id="result"></div>
+</div>
+
 <div class="menu">
-  <a href="#varken">🍖 Varken</a>
-  <a href="#kip">🍗 Kip</a>
-  <a href="#rund">🥩 Rund</a>
-  <a href="#vis">🐟 Vis</a>
-  <a href="#groente">🥦 Groente</a>
+<a href="#varken">🍖 Varken</a>
+<a href="#kip">🍗 Kip</a>
+<a href="#rund">🥩 Rund</a>
+<a href="#vis">🐟 Vis</a>
+<a href="#groente">🥦 Groente</a>
 </div>
 
 <div class="wrap">
 
-  <div id="varken" class="section">
-    <h2>Varken</h2>
+<h2 id="varken">Varken</h2>
 
-    <details>
-      <summary>▼ Spareribs</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 130°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Rookhout:</span> Appel / kers</div>
-        <div class="line"><span class="label">Rub:</span> 2 el paprika • 1 el bruine suiker • 1 tl knoflookpoeder • 1 tl uienpoeder • ½ tl peper • ½ tl komijn • weinig zout</div>
-        <div class="line"><span class="label">Stap 1:</span> 2,5 uur roken</div>
-        <div class="line"><span class="label">Stap 2:</span> 1 tot 1,5 uur in folie met boter + appelsap</div>
-        <div class="line"><span class="label">Stap 3:</span> 20–30 min aflakken met BBQ-saus en beetje honing</div>
-        <div class="line"><span class="label">Kerntemperatuur:</span> 90–95°C</div>
-        <div class="tip">Tip: ribs hoef je meestal niet te draaien. Kijk pas laat, anders verlies je temperatuur.</div>
-      </div>
-    </details>
+<details>
+<summary>Spareribs</summary>
+<div class="content">
+<div class="line">Temp: 130°C • Indirect • Appel/kers</div>
+<div class="line">Tijd: ±6 uur</div>
+<div class="line">Stap 1: 2,5 uur roken</div>
+<div class="line">Stap 2: 1,5 uur folie</div>
+<div class="line">Stap 3: 30 min glaze</div>
+</div>
+</details>
 
-    <details>
-      <summary>▼ Pulled Pork</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 110–120°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Rookhout:</span> Appel / kers</div>
-        <div class="line"><span class="label">Rub:</span> Paprika • bruine suiker • knoflook • ui • komijn • beetje mosterdpoeder</div>
-        <div class="line"><span class="label">Tijd:</span> 7–9 uur, soms langer</div>
-        <div class="line"><span class="label">Stap 1:</span> Rustig low & slow garen</div>
-        <div class="line"><span class="label">Stap 2:</span> Inpakken rond 70°C</div>
-        <div class="line"><span class="label">Stap 3:</span> Doorgaren tot 92–96°C</div>
-        <div class="line"><span class="label">Stap 4:</span> 30 min rusten, daarna uit elkaar trekken</div>
-        <div class="line"><span class="label">Kerntemperatuur:</span> 92–96°C</div>
-        <div class="tip">Tip: vul je kolenmand goed, dit is een lange sessie.</div>
-      </div>
-    </details>
+<details>
+<summary>Pulled Pork</summary>
+<div class="content">
+<div class="line">Temp: 110°C</div>
+<div class="line">Tijd: 7–9 uur</div>
+<div class="line">Kerntemp: 92°C</div>
+</div>
+</details>
 
-    <details>
-      <summary>▼ Pork Belly Burnt Ends</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 130°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Rookhout:</span> Appel / kers</div>
-        <div class="line"><span class="label">Rub:</span> 2 el paprika • 1 el bruine suiker • 1 tl knoflookpoeder • ½ tl peper • ½ tl komijn</div>
-        <div class="line"><span class="label">Stap 1:</span> Buikspek in blokjes snijden</div>
-        <div class="line"><span class="label">Stap 2:</span> 2,5 uur roken</div>
-        <div class="line"><span class="label">Stap 3:</span> 1,5 uur in schaal met boter + honing</div>
-        <div class="line"><span class="label">Stap 4:</span> 20 min glaze / karamelliseren</div>
-        <div class="line"><span class="label">Kerntemperatuur:</span> 92–96°C</div>
-        <div class="tip">Tip: liever weinig zout gebruiken, anders wordt het snel te heftig.</div>
-      </div>
-    </details>
+<h2 id="kip">Kip</h2>
 
-    <details>
-      <summary>▼ Speklappen</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 190–220°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct</div>
-        <div class="line"><span class="label">Kruiden:</span> Paprika • knoflookpoeder • peper</div>
-        <div class="line"><span class="label">Tijd:</span> 10–15 min</div>
-        <div class="line"><span class="label">Bereiding:</span> 4–5 min per kant, afhankelijk van dikte</div>
-        <div class="tip">Tip: regelmatig draaien, maar niet elke paar seconden.</div>
-      </div>
-    </details>
+<details>
+<summary>Hele kip</summary>
+<div class="content">
+<div class="line">Temp: 180°C</div>
+<div class="line">Tijd: 60–75 min</div>
+<div class="line">Kerntemp: 75°C</div>
+</div>
+</details>
 
-    <a class="toplink" href="#top">↑ terug naar boven</a>
-  </div>
+<details>
+<summary>Kipdij</summary>
+<div class="content">
+<div class="line">Temp: 190°C</div>
+<div class="line">Tijd: 20–25 min</div>
+</div>
+</details>
 
-  <div id="kip" class="section">
-    <h2>Kip</h2>
+<h2 id="vis">Vis</h2>
 
-    <details>
-      <summary>▼ Hele kip</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 170–180°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Rookhout:</span> Appel</div>
-        <div class="line"><span class="label">Rub:</span> 1 el paprika • 1 tl knoflookpoeder • 1 tl uienpoeder • ½ tl peper • ½ tl tijm • beetje citroenrasp</div>
-        <div class="line"><span class="label">Tijd:</span> 60–75 min</div>
-        <div class="line"><span class="label">Stap 1:</span> Rustig indirect garen</div>
-        <div class="line"><span class="label">Stap 2:</span> Laatste 10 min extra hitte voor krokante huid</div>
-        <div class="line"><span class="label">Kerntemperatuur:</span> 75°C</div>
-        <div class="tip">Tip: pootjes niet te dicht op het vuur leggen, anders kleuren ze te snel.</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Kipdij</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 190°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct / indirect</div>
-        <div class="line"><span class="label">Kruiden:</span> Paprika • knoflook • peper • beetje tijm</div>
-        <div class="line"><span class="label">Tijd:</span> 20–25 min</div>
-        <div class="line"><span class="label">Kerntemperatuur:</span> 75°C</div>
-        <div class="tip">Tip: eerst rustig garen, dan kort meer hitte voor kleur.</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Chicken Wings</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 190°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect + direct</div>
-        <div class="line"><span class="label">Kruiden:</span> Paprika • knoflook • beetje chili • peper</div>
-        <div class="line"><span class="label">Tijd:</span> 30 min indirect + 10 min direct</div>
-        <div class="line"><span class="label">Kerntemperatuur:</span> 75°C</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Kipspiesjes</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 190–200°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct</div>
-        <div class="line"><span class="label">Kruiden:</span> Paprika • knoflook • peper • olie</div>
-        <div class="line"><span class="label">Tijd:</span> 12–15 min</div>
-        <div class="tip">Tip: regelmatig draaien voor gelijkmatige kleur.</div>
-      </div>
-    </details>
-
-    <a class="toplink" href="#top">↑ terug naar boven</a>
-  </div>
-
-  <div id="rund" class="section">
-    <h2>Rund</h2>
-
-    <details>
-      <summary>▼ Steak</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 220–250°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct</div>
-        <div class="line"><span class="label">Kruiden:</span> Peper • knoflookpoeder • heel weinig zout</div>
-        <div class="line"><span class="label">Tijd:</span> 2–3 min per kant</div>
-        <div class="line"><span class="label">Kerntemperatuur medium:</span> 54–57°C</div>
-        <div class="tip">Tip: altijd 5 min laten rusten na het grillen.</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Burgers</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 200°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct</div>
-        <div class="line"><span class="label">Kruiden:</span> Peper • knoflookpoeder • ½ tl paprikapoeder • weinig zout</div>
-        <div class="line"><span class="label">Tijd:</span> 3–4 min per kant</div>
-        <div class="line"><span class="label">Tip:</span> 1 keer draaien is meestal genoeg</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Picanha</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 160°C + afgrillen</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect / direct</div>
-        <div class="line"><span class="label">Kruiden:</span> Peper • knoflook</div>
-        <div class="line"><span class="label">Tijd:</span> 45–60 min afhankelijk van grootte</div>
-        <div class="line"><span class="label">Stap 1:</span> Indirect tot kern rond 50°C</div>
-        <div class="line"><span class="label">Stap 2:</span> Kort direct afgrillen</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Brisket</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 110–120°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Rookhout:</span> Eik / hickory</div>
-        <div class="line"><span class="label">Tijd:</span> Lang, vaak 8+ uur</div>
-        <div class="line"><span class="label">Kerntemperatuur:</span> rond 92–96°C</div>
-      </div>
-    </details>
-
-    <a class="toplink" href="#top">↑ terug naar boven</a>
-  </div>
-
-  <div id="vis" class="section">
-    <h2>Vis</h2>
-
-    <details>
-      <summary>▼ Zalm</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 180°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Rookhout:</span> Beuken / appel</div>
-        <div class="line"><span class="label">Kruiden:</span> Peper • citroenrasp • dille • klein beetje zout</div>
-        <div class="line"><span class="label">Tijd:</span> 15–20 min</div>
-        <div class="line"><span class="label">Kerntemperatuur:</span> 50–55°C</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Garnalen</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 200°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct</div>
-        <div class="line"><span class="label">Kruiden:</span> Knoflook • olie • beetje chili • peper</div>
-        <div class="line"><span class="label">Tijd:</span> 6–8 min</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Kabeljauw / witvis</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 170–180°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Kruiden:</span> Peper • citroen • beetje knoflook</div>
-        <div class="line"><span class="label">Tijd:</span> 15–18 min</div>
-        <div class="tip">Tip: niet draaien, vis is dan mooier heel te houden.</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Dorade</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 170°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Kruiden:</span> Citroen • peper • beetje knoflook • olijfolie</div>
-        <div class="line"><span class="label">Tijd:</span> 20–25 min</div>
-      </div>
-    </details>
-
-    <a class="toplink" href="#top">↑ terug naar boven</a>
-  </div>
-
-  <div id="groente" class="section">
-    <h2>Groente & pizza</h2>
-
-    <details>
-      <summary>▼ Aardappels</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 180°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Kruiden:</span> Olie • peper • knoflook • rozemarijn</div>
-        <div class="line"><span class="label">Tijd:</span> 30–40 min</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Gegrilde groentenmix</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 180–200°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct / indirect</div>
-        <div class="line"><span class="label">Kruidenmix:</span> Olijfolie • peper • zeezout • knoflook • rozemarijn of tijm</div>
-        <div class="line"><span class="label">Voorbeelden:</span> Courgette • paprika • champignons • aubergine</div>
-        <div class="line"><span class="label">Tijd:</span> 10–15 min</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Maiskolf</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 180–200°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct / indirect</div>
-        <div class="line"><span class="label">Kruiden:</span> Boter • peper • beetje paprikapoeder</div>
-        <div class="line"><span class="label">Tijd:</span> 15–20 min</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Paprika</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 180–200°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Direct</div>
-        <div class="line"><span class="label">Kruiden:</span> Olie • peper • beetje zout</div>
-        <div class="line"><span class="label">Tijd:</span> 8–12 min</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Pizza</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 300–350°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Pizza steen</div>
-        <div class="line"><span class="label">Kruiden:</span> Oregano • basilicum • beetje knoflook op de saus</div>
-        <div class="line"><span class="label">Tijd:</span> 5–7 min</div>
-      </div>
-    </details>
-
-    <details>
-      <summary>▼ Knoflookbrood</summary>
-      <div class="content">
-        <div class="line"><span class="label">Temperatuur:</span> 180–200°C</div>
-        <div class="line"><span class="label">Bereiding:</span> Indirect</div>
-        <div class="line"><span class="label">Kruiden:</span> Boter • knoflook • peterselie</div>
-        <div class="line"><span class="label">Tijd:</span> 8–12 min</div>
-      </div>
-    </details>
-
-    <a class="toplink" href="#top">↑ terug naar boven</a>
-  </div>
+<details>
+<summary>Zalm</summary>
+<div class="content">
+<div class="line">Temp: 180°C</div>
+<div class="line">Tijd: 20 min</div>
+</div>
+</details>
 
 </div>
+
+<script>
+function bereken(){
+let tijd = document.getElementById("eetTijd").value;
+let duur = document.getElementById("gerecht").value;
+
+if(!tijd){ 
+document.getElementById("result").innerHTML = "Vul eerst een tijd in";
+return;
+}
+
+let [uren, minuten] = tijd.split(":");
+let eind = new Date();
+eind.setHours(uren);
+eind.setMinutes(minuten);
+
+let start = new Date(eind.getTime() - duur*60000);
+
+let sUur = String(start.getHours()).padStart(2,'0');
+let sMin = String(start.getMinutes()).padStart(2,'0');
+
+document.getElementById("result").innerHTML = 
+"👉 Begin om: " + sUur + ":" + sMin;
+}
+</script>
+
 </body>
 </html>
